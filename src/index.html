@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Blog — Tarea 1</title>
+  <!-- Google Fonts: Playfair Display + Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">TheBlog</a>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Health</a></li>
+          <li><a href="#">Gaming</a></li>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Food</a></li>
+          <li><a href="#">Business</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN: contenido principal -->
+  <main>
+
+    <!-- SECCIÓN 1: 3 cards superiores — ancho completo -->
+    <div class="container">
+      <section class="featured-cards" aria-label="Artículos destacados">
+        <article class="card card-featured">
+          <img src="assets/imagenes/paisaje1.jpg" alt="Paisaje montañoso" class="card-img" />
+          <div class="card-overlay">
+            <span class="badge badge-lifestyle">Lifestyle</span>
+            <h2 class="card-title">The Most Popular Places to Visit in the World</h2>
+            <p class="card-category">Top Places</p>
+          </div>
+        </article>
+
+        <article class="card card-featured">
+          <img src="assets/imagenes/yoga.webp" alt="Persona haciendo yoga al atardecer" class="card-img" />
+          <div class="card-overlay">
+            <span class="badge badge-health">Health</span>
+            <h2 class="card-title">Does Exercise Help with your Productivity</h2>
+            <p class="card-category">Health Chat</p>
+          </div>
+        </article>
+
+        <article class="card card-featured">
+          <img src="assets/imagenes/videojuegos.jpg" alt="Varierdad de videojuegos" class="card-img" />
+          <div class="card-overlay">
+            <span class="badge badge-gaming">Gaming</span>
+            <h2 class="card-title">Can Playing Video Games Help Reduce Stress?</h2>
+            <p class="card-category">Game Play</p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <!-- dos columnas, artículo featured y sidebar -->
+    <div class="container main-layout">
+      <div class="content-area">
+
+      <!-- Artículo principal featured -->
+      <section class="main-article-section" aria-label="Artículo principal">
+        <article class="main-article">
+          <img src="assets/imagenes/paisaje2.jpg" alt="Paisaje montañoso con lago" class="main-article-img" />
+          <p class="article-label">Travel</p>
+          <h2 class="article-title">Where to Visit on Your Next Vacation</h2>
+          <p class="article-meta">Written by Jane Doe on December 02, 2019</p>
+          <p class="article-excerpt">There are thousands of places you can visit on your next vacation. In this post we'll show you the top destinations to consider for your next adventure...</p>
+        </article>
+      </section>
+
+      <!-- Grid de 4 artículos pequeños -->
+      <section class="grid-articles" aria-label="Más artículos">
+        <article class="small-card">
+          <img src="assets/imagenes/tiempoEnLaPlaya.jpg" alt="Grupo de amigos alrededor de una fogata en la playa" class="small-card-img" />
+          <h3 class="small-card-title">Time for the Beach and Friends</h3>
+          <p class="small-card-excerpt">Many people live so close to amazing scenery, yet they rarely take...</p>
+        </article>
+
+        <article class="small-card">
+          <img src="assets/imagenes/paisaje3.jpg" alt="Atardecer en la playa" class="small-card-img" />
+          <h3 class="small-card-title">Are you Ready for an Experience?</h3>
+          <p class="small-card-excerpt">Check out these awesome places you'll want to visit as you set your...</p>
+        </article>
+
+        <article class="small-card">
+          <img src="assets/imagenes/juegoNiños.jpg" alt="Niños jugando" class="small-card-img" />
+          <h3 class="small-card-title">Take Me Back in Time</h3>
+          <p class="small-card-excerpt">How nice would that be to go back in time and enjoy the youth...</p>
+        </article>
+
+        <article class="small-card">
+          <img src="assets/imagenes/ejercicio.webp" alt="Persona entrenando" class="small-card-img" />
+          <h3 class="small-card-title">Here are the Best Ways to Train</h3>
+          <p class="small-card-excerpt">Learn about the best ways to train to get the most of your workout...</p>
+        </article>
+      </section>
+
+      </div><!-- fin .content-area -->
+
+    <!-- ASIDE: sidebar con newsletter, categorías y posts recientes -->
+    <aside class="sidebar" aria-label="Sidebar con contenido secundario">
+
+      <!-- Formulario de newsletter -->
+      <section class="newsletter-box" aria-label="Suscripción al newsletter">
+        <h3 class="sidebar-title">Subscribe to our Newsletter</h3>
+        <p class="sidebar-sub">No Spam. Only one email per week.</p>
+        <form class="newsletter-form" action="#" method="post">
+          <label for="first-name" class="sr-only">Nombre</label>
+          <input type="text" id="first-name" name="first-name" placeholder="First Name" class="form-input" />
+
+          <label for="email" class="sr-only">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Email Address" class="form-input" />
+
+          <button type="submit" class="btn-subscribe">SUBSCRIBE</button>
+        </form>
+      </section>
+
+      <!-- Categorías -->
+      <section class="categories-box" aria-label="Categorías">
+        <h3 class="sidebar-title">Categories</h3>
+        <ul class="categories-list">
+          <li><a href="#">Lifestyle</a><span>32</span></li>
+          <li><a href="#">Health</a><span>41</span></li>
+          <li><a href="#">Gaming</a><span>27</span></li>
+          <li><a href="#">Travel</a><span>21</span></li>
+          <li><a href="#">Food</a><span>15</span></li>
+          <li><a href="#">Business</a><span>28</span></li>
+        </ul>
+      </section>
+
+      <!-- Posts recientes -->
+      <section class="recent-posts" aria-label="Posts recientes">
+        <h3 class="sidebar-title">Recent Posts</h3>
+
+        <article class="recent-item">
+          <img src="assets/imagenes/paisaje4.jpg" alt="Vista panorámica de destinos de viaje" class="recent-img" />
+          <div class="recent-text">
+            <a href="#" class="recent-title">Top Destinations to Visit in the World</a>
+            <p class="recent-date">January 02, 2021</p>
+          </div>
+        </article>
+
+        <article class="recent-item">
+          <img src="assets/imagenes/realidadVirtual.jpg" alt="Experiencia en realidad aumentada" class="recent-img" />
+          <div class="recent-text">
+            <a href="#" class="recent-title">Experience the Future of the 3d Gaming Experience</a>
+            <p class="recent-date">January 04, 2021</p>
+          </div>
+        </article>
+
+        <article class="recent-item">
+          <img src="assets/imagenes/paisaje5.jpg" alt="Paisaje al final del mundo" class="recent-img" />
+          <div class="recent-text">
+            <a href="#" class="recent-title">Take a Trip to The End of The World</a>
+            <p class="recent-date">January 05, 2021</p>
+          </div>
+        </article>
+      </section>
+
+    </aside><!-- fin .sidebar -->
+
+    </div><!-- fin .main-layout -->
+
+  </main><!-- fin main -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 TheBlog — Tarea 1 Clon Web</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

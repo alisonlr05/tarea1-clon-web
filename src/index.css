@@ -1,0 +1,428 @@
+
+/*  Paleta de colores y tipografía centralizada*/
+:root {
+  --color-primario: #2d6a4f;
+  --color-secundario: #1b4332;
+  --color-acento: #f4a261;
+  --color-fondo: #f8f8f8;
+  --color-texto: #222222;
+  --color-texto-suave: #666666;
+  --color-borde: #e0e0e0;
+  --color-blanco: #ffffff;
+
+  --color-badge-lifestyle: #6c63ff;
+  --color-badge-health:    #e63946;
+  --color-badge-gaming:    #f4a261;
+
+  --fuente-titulo: 'Playfair Display', serif;
+  --fuente-cuerpo: 'Lato', sans-serif;
+
+  --radio-borde: 6px;
+  --sombra-card: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.site-header {
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 16px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--fuente-titulo);
+  font-size: 24px;
+  color: var(--color-secundario);
+  font-weight: 700;
+}
+
+.nav-principal ul {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-principal a {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-principal a:hover {
+  color: var(--color-primario);
+}
+
+/* LAYOUT PRINCIPAL: content + sidebar*/
+.main-layout {
+  display: flex;
+  gap: 32px;
+  margin: 32px auto;
+  align-items: flex-start;
+}
+
+.content-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+/* 3 cards superiores */
+.featured-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.card {
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+}
+
+.card-featured {
+  position: relative;
+  height: 200px;
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  color: var(--color-blanco);
+}
+
+.card-title {
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 6px 0 4px;
+}
+
+.card-category {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.card-featured:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* etiquetas de categoría*/
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: var(--color-blanco);
+  letter-spacing: 0.5px;
+}
+
+.badge-lifestyle { background-color: var(--color-badge-lifestyle); }
+.badge-health    { background-color: var(--color-badge-health); }
+.badge-gaming    { background-color: var(--color-badge-gaming); }
+
+/* ARTÍCULO PRINCIPAL FEATURED- */
+.main-article-section {
+  margin-bottom: 28px;
+}
+
+.main-article-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  margin-bottom: 14px;
+}
+
+/*  etiqueta de sección del artículo */
+.article-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.article-title {
+  font-family: var(--fuente-titulo);
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  color: var(--color-texto);
+}
+
+.article-meta {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+  margin-bottom: 10px;
+}
+
+.article-excerpt {
+  font-size: 14px;
+  color: var(--color-texto-suave);
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------
+   SECCIÓN 3: GRID DE 4 ARTÍCULOS PEQUEÑOS
+   ------------------------------------------------------------
+   NOTA DE ESPECIFICIDAD: Usamos .small-card img en lugar del
+   selector genérico img para que estos estilos de altura
+   apliquen solo a las imágenes dentro de small-card y no
+   sobreescriban el objeto fit del artículo principal.
+   ------------------------------------------------------------ */
+.grid-articles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.small-card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  padding-bottom: 14px;
+}
+
+/*  imagen específica dentro de small-card */
+.small-card img {
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.small-card-title {
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+  padding: 0 12px;
+  margin-bottom: 6px;
+}
+
+.small-card-excerpt {
+  font-size: 13px;
+  color: var(--color-texto-suave);
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+.small-card .read-more {
+  padding: 0 12px;
+  display: block;
+}
+
+.small-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s ease;
+}
+
+/* SIDEBAR */
+.sidebar-title {
+  font-family: var(--fuente-titulo);
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: var(--color-texto);
+}
+
+.sidebar-sub {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+  margin-bottom: 12px;
+}
+
+/* newsletter */
+.newsletter-box {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* campos del formulario */
+.form-input {
+  padding: 9px 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 13px;
+  color: var(--color-texto);
+  background-color: var(--color-blanco);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.2);
+}
+
+.btn-subscribe {
+  background-color: var(--color-texto);
+  color: var(--color-blanco);
+  border: none;
+  padding: 10px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-subscribe:hover {
+  background-color: var(--color-primario);
+  transition: background-color 0.2s ease;
+}
+
+/* Categorias */
+.categories-box {
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: 20px;
+}
+
+.categories-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 14px;
+}
+
+.categories-list a:hover {
+  color: var(--color-primario);
+}
+
+.categories-list span {
+  color: var(--color-texto-suave);
+  font-size: 13px;
+}
+
+/* Recent Posts */
+.recent-posts {
+  margin-bottom: 24px;
+}
+
+.recent-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+
+.recent-img {
+  width: 70px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.recent-title {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.recent-title:hover {
+  color: var(--color-primario);
+}
+
+.recent-date {
+  font-size: 11px;
+  color: var(--color-texto-suave);
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: var(--color-blanco);
+  border-top: 1px solid var(--color-borde);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-texto-suave);
+  margin-top: 40px;
+}
