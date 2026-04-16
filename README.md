@@ -9,7 +9,7 @@ Sitio clonado: Un sitio blog que fue brindado por el profesor
 ## Screenshots
 
 ### Sitio original
-![Sitio original](docs\assets\Imagenes\original.png)
+![Sitio original](docs/assets/Imagenes/original.png)
 
 ### Mi clon
 ![Mi clon](docs\assets\Imagenes\clon.png)
