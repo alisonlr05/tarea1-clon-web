@@ -12,5 +12,5 @@ Sitio clonado: Un sitio blog que fue brindado por el profesor
 ![Sitio original](docs/assets/Imagenes/original.png)
 
 ### Mi clon
-![Mi clon](docs\assets\Imagenes\clon.png)
-![Segunda parte](docs\assets\Imagenes\clon2.png) 
+![Mi clon](docs/assets/Imagenes/clon.png) 
+![Segunda parte](docs/assets/Imagenes/clon2.png) 
