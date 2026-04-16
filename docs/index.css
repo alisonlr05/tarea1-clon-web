@@ -1,14 +1,34 @@
+/* index.css — TheBlog Tarea 1
+ *
+ *  TIPOS DE SELECTORES USADOS:
+ *
+ *  1. Selector de ELEMENTO (etiqueta)
+ *     Ejemplo: body, img, ul, a
+ *     Especificidad baja (0,0,1). Aplica a todos los elementos
+ *     de ese tipo; sirve como base global.
+ *
+ *  2. Selector de CLASE (.clase)
+ *     Ejemplo: .container, .card, .form-input, .btn-subscribe
+ *     Especificidad media (0,1,0). Permite reutilizar estilos
+ *     en múltiples elementos sin importar su etiqueta.
+ *
+ *  3. Selector PSEUDO-CLASE (:hover, :focus, :disabled)
+ *     Ejemplo: .nav-principal a:hover, .form-input:focus
+ *     Especificidad media (0,1,1). Estiliza estados interactivos
+ *     y mejora la accesibilidad visual del formulario.
+  
+ La cascada resulve: Si dos reglas tienen igual especificidad, gana la última declarada en el archivo. */
 
-/*  Paleta de colores y tipografía centralizada*/
+/*  Variables y reset global  */
 :root {
-  --color-primario: #2d6a4f;
-  --color-secundario: #1b4332;
-  --color-acento: #f4a261;
-  --color-fondo: #f8f8f8;
-  --color-texto: #222222;
-  --color-texto-suave: #666666;
-  --color-borde: #e0e0e0;
-  --color-blanco: #ffffff;
+  --color-primario:        #2d6a4f;
+  --color-secundario:      #1b4332;
+  --color-acento:          #f4a261;
+  --color-fondo:           #f8f8f8;
+  --color-texto:           #222222;
+  --color-texto-suave:     #666666;
+  --color-borde:           #e0e0e0;
+  --color-blanco:          #ffffff;
 
   --color-badge-lifestyle: #6c63ff;
   --color-badge-health:    #e63946;
@@ -17,10 +37,11 @@
   --fuente-titulo: 'Playfair Display', serif;
   --fuente-cuerpo: 'Lato', sans-serif;
 
-  --radio-borde: 6px;
-  --sombra-card: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --radio-borde:  6px;
+  --sombra-card:  0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Selector de ELEMENTO — reset base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -35,6 +56,7 @@ body {
   line-height: 1.6;
 }
 
+/* Selector de ELEMENTO */
 a {
   text-decoration: none;
   color: inherit;
@@ -51,6 +73,7 @@ img {
   object-fit: cover;
 }
 
+/* Selector de CLASE — utilidad de accesibilidad */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -62,14 +85,16 @@ img {
   border: 0;
 }
 
-/* CONTENEDOR */
+/*  Contenedor  */
+/* Selector de CLASE */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* HEADER */
+/*  Header */
+/* Selector de CLASE */
 .site-header {
   background-color: var(--color-blanco);
   border-bottom: 1px solid var(--color-borde);
@@ -89,6 +114,7 @@ img {
   font-weight: 700;
 }
 
+/* Selector COMBINADOR DESCENDENTE */
 .nav-principal ul {
   display: flex;
   gap: 24px;
@@ -102,11 +128,12 @@ img {
   letter-spacing: 0.5px;
 }
 
+/* Selector PSEUDO-CLASE */
 .nav-principal a:hover {
   color: var(--color-primario);
 }
 
-/* LAYOUT PRINCIPAL: content + sidebar*/
+/*  Layout principal: content + sidebar*/
 .main-layout {
   display: flex;
   gap: 32px;
@@ -124,7 +151,7 @@ img {
   flex-shrink: 0;
 }
 
-/* 3 cards superiores */
+/*  Cards superiores */
 .featured-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -173,13 +200,14 @@ img {
   opacity: 0.8;
 }
 
+/* Selector PSEUDO-CLASE con transición */
 .card-featured:hover {
   transform: translateY(-3px);
   transition: transform 0.2s ease;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* etiquetas de categoría*/
+/*Badges de categoría */
 .badge {
   display: inline-block;
   font-size: 10px;
@@ -195,7 +223,7 @@ img {
 .badge-health    { background-color: var(--color-badge-health); }
 .badge-gaming    { background-color: var(--color-badge-gaming); }
 
-/* ARTÍCULO PRINCIPAL FEATURED- */
+/*Artículo principal */
 .main-article-section {
   margin-bottom: 28px;
 }
@@ -208,7 +236,6 @@ img {
   margin-bottom: 14px;
 }
 
-/*  etiqueta de sección del artículo */
 .article-label {
   font-size: 11px;
   font-weight: 700;
@@ -232,13 +259,19 @@ img {
   margin-bottom: 10px;
 }
 
+/* Selector COMBINADOR DESCENDENTE */
+.article-meta .author-name {
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
 .article-excerpt {
   font-size: 14px;
   color: var(--color-texto-suave);
   margin-bottom: 10px;
 }
 
-/* GRID DE 4 ARTÍCULOS PEQUEÑOS */
+/* Grid de 4 artículos pequeños */
 .grid-articles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -253,7 +286,6 @@ img {
   padding-bottom: 14px;
 }
 
-/*  imagen específica dentro de small-card */
 .small-card img,
 .small-card-img {
   height: 150px;
@@ -275,17 +307,13 @@ img {
   margin-bottom: 8px;
 }
 
-.small-card .read-more {
-  padding: 0 12px;
-  display: block;
-}
-
+/* Selector PSEUDO-CLASE */
 .small-card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.2s ease;
 }
 
-/* SIDEBAR */
+/*  Sidebar — títulos y subtítulos  */
 .sidebar-title {
   font-family: var(--fuente-titulo);
   font-size: 16px;
@@ -299,7 +327,7 @@ img {
   margin-bottom: 12px;
 }
 
-/* newsletter */
+/* Newsletter */
 .newsletter-box {
   background-color: var(--color-blanco);
   border: 1px solid var(--color-borde);
@@ -311,10 +339,24 @@ img {
 .newsletter-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* campos del formulario */
+/*
+ * Selector COMBINADOR DESCENDENTE:
+ * .newsletter-form .form-label — solo etiquetas dentro del form
+ */
+.newsletter-form .form-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-texto-suave);
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+/* Selector de CLASE */
 .form-input {
   padding: 9px 10px;
   border: 1px solid var(--color-borde);
@@ -324,11 +366,33 @@ img {
   color: var(--color-texto);
   background-color: var(--color-blanco);
   outline: none;
+  width: 100%;
 }
 
+/* Selector PSEUDO-CLASE */
 .form-input:focus {
   border-color: var(--color-primario);
   box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.2);
+}
+
+/* Selector de ATRIBUTO — solo inputs tipo email con validación requerida */
+input[type="email"][required]:invalid:not(:placeholder-shown) {
+  border-color: var(--color-badge-health);
+}
+
+/* Selector de ATRIBUTO — selector nativo */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+
+/* Selector de ELEMENTO dentro de contexto */
+.newsletter-form button {
+  margin-top: 8px;
 }
 
 .btn-subscribe {
@@ -342,20 +406,23 @@ img {
   letter-spacing: 1px;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
 }
 
+/* Selector PSEUDO-CLASE */
 .btn-subscribe:hover {
   background-color: var(--color-primario);
   transition: background-color 0.2s ease;
 }
 
-/* Categorias */
+/*Categorías */
 .categories-box {
   margin-bottom: 24px;
   border-bottom: 1px solid var(--color-borde);
   padding-bottom: 20px;
 }
 
+/* Selector COMBINADOR DESCENDENTE */
 .categories-list li {
   display: flex;
   justify-content: space-between;
@@ -364,6 +431,7 @@ img {
   font-size: 14px;
 }
 
+/* Selector PSEUDO-CLASE */
 .categories-list a:hover {
   color: var(--color-primario);
 }
@@ -373,7 +441,7 @@ img {
   font-size: 13px;
 }
 
-/* Recent Posts */
+/* Recent Posts*/
 .recent-posts {
   margin-bottom: 24px;
 }
@@ -401,6 +469,7 @@ img {
   margin-bottom: 4px;
 }
 
+/* Selector PSEUDO-CLASE */
 .recent-title:hover {
   color: var(--color-primario);
 }
@@ -410,7 +479,7 @@ img {
   color: var(--color-texto-suave);
 }
 
-/* FOOTER */
+/* Footer */
 .site-footer {
   background-color: var(--color-blanco);
   border-top: 1px solid var(--color-borde);
