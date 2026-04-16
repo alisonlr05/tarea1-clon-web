@@ -238,14 +238,7 @@ img {
   margin-bottom: 10px;
 }
 
-/* ------------------------------------------------------------
-   SECCIÓN 3: GRID DE 4 ARTÍCULOS PEQUEÑOS
-   ------------------------------------------------------------
-   NOTA DE ESPECIFICIDAD: Usamos .small-card img en lugar del
-   selector genérico img para que estos estilos de altura
-   apliquen solo a las imágenes dentro de small-card y no
-   sobreescriban el objeto fit del artículo principal.
-   ------------------------------------------------------------ */
+/* GRID DE 4 ARTÍCULOS PEQUEÑOS */
 .grid-articles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -261,7 +254,8 @@ img {
 }
 
 /*  imagen específica dentro de small-card */
-.small-card img {
+.small-card img,
+.small-card-img {
   height: 150px;
   object-fit: cover;
   margin-bottom: 10px;
