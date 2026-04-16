@@ -9,8 +9,8 @@ Sitio clonado: Un sitio blog que fue brindado por el profesor
 ## Screenshots
 
 ### Sitio original
-![Sitio original](docs\assets\Imagenes\screenshot-original.png)
+![Sitio original](docs\assets\Imagenes\original.png)
 
 ### Mi clon
-![Mi clon](docs\assets\Imagenes\screenshot-clon.png)
-![Segunda parte](docs\assets\Imagenes\screenshot-clon2.png) 
+![Mi clon](docs\assets\Imagenes\clon.png)
+![Segunda parte](docs\assets\Imagenes\clon2.png) 
